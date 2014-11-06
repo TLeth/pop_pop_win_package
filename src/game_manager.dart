@@ -9,7 +9,9 @@ import 'game_storage.dart';
 import 'game.dart';
 
 abstract class GameManager {
-  final int _width, _height, _bombCount;
+  final int _width;
+  final int _height;
+  final int _bombCount;
   final GameStorage _gameStorage = new GameStorage();
 
   Game _game;
@@ -25,8 +27,7 @@ abstract class GameManager {
 
   Stream get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
-  Future<int> get bestTimeMilliseconds =>
-      _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
+  Future<int> get bestTimeMilliseconds => _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
     if (_updatedEventId != null) {

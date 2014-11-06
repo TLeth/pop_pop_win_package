@@ -41,6 +41,5 @@ class BoardElement extends Sprite {
   Game get game => gameElement.game;
   Stage get _stage => gameElement.manager.stage;
 
-  TextureAtlas get opaqueAtlas =>
-      gameElement.resourceManager.getTextureAtlas('opaque');
+  TextureAtlas get opaqueAtlas => gameElement.resourceManager.getTextureAtlas('opaque');
 }

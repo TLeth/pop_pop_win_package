@@ -7,8 +7,7 @@ class Game {
   final Field field;
   final Array2d<SquareState> _states;
   final StreamController _updatedEvent = new StreamController();
-  final StreamController<GameState> _gameStateEvent =
-      new StreamController<GameState>();
+  final StreamController<GameState> _gameStateEvent = new StreamController<GameState>();
 
   GameState _state;
   int _bombsLeft;
@@ -19,8 +18,7 @@ class Game {
   Game(Field field)
       : this.field = field,
         _state = GameState.reset,
-        _states = new Array2d<SquareState>(field.width, field.height,
-          SquareState.hidden) {
+        _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden) {
     assert(field != null);
     _bombsLeft = field.bombCount;
     _revealsLeft = field.length - field.bombCount;
